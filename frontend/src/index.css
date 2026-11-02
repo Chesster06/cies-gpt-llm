@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #ffffff;
+    --bg-sidebar: #f7f7f7;
+    --text-primary: #0d0d0d;
+    --text-secondary: #666666;
+    --border-color: #e5e5e5;
+  }
+
+  .dark {
+    --bg-main: #212121;
+    --bg-sidebar: #171717;
+    --text-primary: #ececec;
+    --text-secondary: #9e9e9e;
+    --border-color: #2e2e2e;
+  }
+
+  .dark[data-preset="oled"] {
+    --bg-main: #000000;
+    --bg-sidebar: #050505;
+    --text-primary: #ffffff;
+    --text-secondary: #a3a3a3;
+    --border-color: #171717;
+  }
+
+  .dark[data-preset="slate"] {
+    --bg-main: #0b0f19;
+    --bg-sidebar: #111827;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --border-color: #1f2937;
+  }
+
+  .dark[data-preset="emerald"] {
+    --bg-main: #021a14;
+    --bg-sidebar: #032b21;
+    --text-primary: #ecfdf5;
+    --text-secondary: #6ee7b7;
+    --border-color: #064e3b;
+  }
+
+  .dark[data-preset="violet"] {
+    --bg-main: #0d0c1d;
+    --bg-sidebar: #19163b;
+    --text-primary: #e0e7ff;
+    --text-secondary: #a5b4fc;
+    --border-color: #2e2870;
+  }
+
+  :root {
+    --accent-color: #0d0d0d;
+  }
+  .dark {
+    --accent-color: #ffffff;
+  }
+  [data-accent="blue"] {
+    --accent-color: #3b82f6;
+  }
+  [data-accent="emerald"] {
+    --accent-color: #10b981;
+  }
+  [data-accent="purple"] {
+    --accent-color: #a855f7;
+  }
+  [data-accent="amber"] {
+    --accent-color: #f59e0b;
+  }
+  [data-accent="rose"] {
+    --accent-color: #f43f5e;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+/* Minimalist monochrome scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a3a3a3;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3e3e3e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}
+
+/* Animated thinking dots */
+@keyframes dotPulse {
+  0%, 80%, 100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.thinking-dot-1 {
+  animation: dotPulse 1.4s infinite ease-in-out both;
+  animation-delay: -0.32s;
+}
+
+.thinking-dot-2 {
+  animation: dotPulse 1.4s infinite ease-in-out both;
+  animation-delay: -0.16s;
+}
+
+.thinking-dot-3 {
+  animation: dotPulse 1.4s infinite ease-in-out both;
+}
+
+/* Custom Animated SVG Keyframes */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes searchSweep {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.08);
+  }
+  75% {
+    transform: rotate(15deg) scale(1.08);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes radarWave {
+  0% {
+    r: 3;
+    opacity: 0.9;
+  }
+  100% {
+    r: 9;
+    opacity: 0;
+  }
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    transform: scale(0.85) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2) rotate(45deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 2px rgba(249, 115, 22, 0.4));
+  }
+  50% {
+    transform: scale(1.12) translateY(-1px) rotate(-2deg);
+    filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.7));
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.5px);
+  }
+}
+
+@keyframes bounceGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.anim-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+.anim-search-sweep {
+  animation: searchSweep 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.anim-radar-wave {
+  animation: radarWave 1.6s ease-out infinite;
+}
+
+.anim-sparkle {
+  animation: sparkleTwinkle 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.anim-flame {
+  animation: flameFlicker 1.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.anim-float {
+  animation: floatGentle 2.4s ease-in-out infinite;
+}
+
+.anim-bounce {
+  animation: bounceGentle 1.8s ease-in-out infinite;
+}
