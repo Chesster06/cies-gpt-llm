@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="assets/CIES.png" alt="CIESGPT Cover" width="850" style="border-radius: 12px; margin-bottom: 20px;" />
-
 # CIESGPT
 
 [![platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-0078D6?logo=windows&logoColor=white)](https://github.com/Chesster06/cies-gpt-llm)
@@ -10,6 +8,8 @@
 [![frontend](https://img.shields.io/badge/frontend-React%2018%20%7C%20Vite-61DAFB?logo=react&logoColor=black)](https://vitejs.dev/)
 
 **CIESGPT** is a self-hosted, web-based conversational AI platform powered by **CIES-1.5B**—a custom in-house neural model developed by **CSDevelopment** and fine-tuned via **LoRA** on the **Qwen-1.5B** architecture. Built with real-time SSE token streaming, local SQLite persistence, and a high-throughput Go backend.
+
+<img src="assets/CIES.png" alt="CIESGPT Cover" width="850" style="border-radius: 12px; margin-bottom: 20px;" />
 
 </div>
 
